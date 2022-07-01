@@ -17,9 +17,9 @@ module.exports = {
     'eslint:recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
-    '@vue/eslint-config-typescript'
+    '@vue/eslint-config-typescript',
     // unplugin-auto-import 自动生成的文件
-    // "./types/.eslintrc-auto-import.json"
+    './.eslintrc-auto-import.json'
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
