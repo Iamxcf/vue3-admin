@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { computed, onBeforeMount, onBeforeUnmount, onMounted, reactive } from "vue"
-import { useAppStore, DeviceType } from "@/store/modules/app"
-import { useSettingsStore } from "@/store/modules/settings"
-import { AppMain, NavigationBar, Settings, Sidebar, TagsView, RightPanel } from "./components"
-import useResize from "./useResize"
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, reactive } from 'vue'
+import { useAppStore, DeviceType } from '@/store/modules/app'
+import { useSettingsStore } from '@/store/modules/settings'
+import { AppMain, NavigationBar, Settings, Sidebar, TagsView, RightPanel } from './components'
+import useResize from './useResize'
 
 const appStore = useAppStore()
 const settingsStore = useSettingsStore()
@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .app-wrapper {
   @include clearfix;

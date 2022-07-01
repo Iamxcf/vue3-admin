@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed } from "vue"
-import { useAppStore } from "@/store/modules/app"
-import { MagicStick } from "@element-plus/icons-vue"
+import { computed } from 'vue'
+import { useAppStore } from '@/store/modules/app'
+import { MagicStick } from '@element-plus/icons-vue'
 
 const appStore = useAppStore()
 

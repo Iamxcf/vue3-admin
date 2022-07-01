@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { useRouter } from "vue-router"
-import SwitchRoles from "./components/SwitchRoles.vue"
+import { useRouter } from 'vue-router'
+import SwitchRoles from './components/SwitchRoles.vue'
 
 const router = useRouter()
 
 const handleRolesChange = () => {
-  router.push({ path: "/401" }).catch((err) => {
+  router.push({ path: '/401' }).catch((err) => {
     console.warn(err)
   })
 }

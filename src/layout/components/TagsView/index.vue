@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { computed, getCurrentInstance, nextTick, onBeforeMount, reactive, watch } from "vue"
-import { RouteRecordRaw, useRoute, useRouter } from "vue-router"
-import { useTagsViewStore, ITagView } from "@/store/modules/tags-view"
-import { usePermissionStore } from "@/store/modules/permission"
-import { Close } from "@element-plus/icons-vue"
-import path from "path-browserify"
-import ScrollPane from "./ScrollPane.vue"
+import { computed, getCurrentInstance, nextTick, onBeforeMount, reactive, watch } from 'vue'
+import { RouteRecordRaw, useRoute, useRouter } from 'vue-router'
+import { useTagsViewStore, ITagView } from '@/store/modules/tags-view'
+import { usePermissionStore } from '@/store/modules/permission'
+import { Close } from '@element-plus/icons-vue'
+import path from 'path-browserify'
+import ScrollPane from './ScrollPane.vue'
 
 const instance = getCurrentInstance()
 const router = useRouter()
@@ -21,13 +21,13 @@ const toLastView = (visitedViews: ITagView[], view: ITagView) => {
     })
   } else {
     // 如果没有 TagsView，请默认重定向到主页，如果你需要，可以自行调整它
-    if (view.name === "Dashboard") {
+    if (view.name === 'Dashboard') {
       // 重新加载主页
-      router.push({ path: "/redirect" + view.fullPath }).catch((err) => {
+      router.push({ path: '/redirect' + view.fullPath }).catch((err) => {
         console.warn(err)
       })
     } else {
-      router.push("/").catch((err) => {
+      router.push('/').catch((err) => {
         console.warn(err)
       })
     }
@@ -49,7 +49,7 @@ const state = reactive({
   refreshSelectedTag: (view: ITagView) => {
     const { fullPath } = view
     nextTick(() => {
-      router.replace({ path: "/redirect" + fullPath }).catch((err) => {
+      router.replace({ path: '/redirect' + fullPath }).catch((err) => {
         console.warn(err)
       })
     })
@@ -100,7 +100,7 @@ const visitedViews = computed(() => {
 })
 const routes = computed(() => permissionStore.routes)
 
-const filterAffixTags = (routes: RouteRecordRaw[], basePath = "/") => {
+const filterAffixTags = (routes: RouteRecordRaw[], basePath = '/') => {
   let tags: ITagView[] = []
   routes.forEach((route) => {
     if (route.meta && route.meta.affix) {
@@ -166,9 +166,9 @@ watch(
   () => state.visible,
   (value) => {
     if (value) {
-      document.body.addEventListener("click", state.closeMenu)
+      document.body.addEventListener('click', state.closeMenu)
     } else {
-      document.body.removeEventListener("click", state.closeMenu)
+      document.body.removeEventListener('click', state.closeMenu)
     }
   }
 )
@@ -240,7 +240,7 @@ onBeforeMount(() => {
         color: var(--v3-tagsview-tag-active-text-color);
         border-color: var(--v3-tagsview-tag-active-border-color);
         &::before {
-          content: "";
+          content: '';
           background-color: var(--v3-tagsview-tag-active-before-color);
           display: inline-block;
           width: 8px;

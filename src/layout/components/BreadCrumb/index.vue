@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { onBeforeMount, reactive, watch } from "vue"
-import { useRoute, useRouter, RouteLocationMatched } from "vue-router"
-import { compile } from "path-to-regexp"
+import { onBeforeMount, reactive, watch } from 'vue'
+import { useRoute, useRouter, RouteLocationMatched } from 'vue-router'
+import { compile } from 'path-to-regexp'
 
 const route = useRoute()
 const router = useRouter()
@@ -37,7 +37,7 @@ const state = reactive({
 watch(
   () => route.path,
   (path) => {
-    if (path.startsWith("/redirect/")) {
+    if (path.startsWith('/redirect/')) {
       return
     }
     state.getBreadcrumb()

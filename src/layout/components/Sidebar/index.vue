@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { computed } from "vue"
-import { useRoute } from "vue-router"
-import { useAppStore } from "@/store/modules/app"
-import { usePermissionStore } from "@/store/modules/permission"
-import { useSettingsStore } from "@/store/modules/settings"
-import SidebarItem from "./SidebarItem.vue"
-import SidebarLogo from "./SidebarLogo.vue"
-import { getCssVariableValue } from "@/utils"
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useAppStore } from '@/store/modules/app'
+import { usePermissionStore } from '@/store/modules/permission'
+import { useSettingsStore } from '@/store/modules/settings'
+import SidebarItem from './SidebarItem.vue'
+import SidebarLogo from './SidebarLogo.vue'
+import { getCssVariableValue } from '@/utils'
 
-const v3SidebarMenuBgColor = getCssVariableValue("--v3-sidebar-menu-bg-color")
-const v3SidebarMenuTextColor = getCssVariableValue("--v3-sidebar-menu-text-color")
-const v3SidebarMenuActiveTextColor = getCssVariableValue("--v3-sidebar-menu-active-text-color")
+const v3SidebarMenuBgColor = getCssVariableValue('--v3-sidebar-menu-bg-color')
+const v3SidebarMenuTextColor = getCssVariableValue('--v3-sidebar-menu-text-color')
+const v3SidebarMenuActiveTextColor = getCssVariableValue('--v3-sidebar-menu-active-text-color')
 
 const route = useRoute()
 
@@ -88,7 +88,7 @@ const isCollapse = computed(() => {
 <style lang="scss" scoped>
 @mixin tip-line {
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

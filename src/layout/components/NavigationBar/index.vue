@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { computed, reactive } from "vue"
-import { useRouter } from "vue-router"
-import { useAppStore } from "@/store/modules/app"
-import { useSettingsStore } from "@/store/modules/settings"
-import { useUserStore } from "@/store/modules/user"
-import { UserFilled } from "@element-plus/icons-vue"
-import BreadCrumb from "../BreadCrumb/index.vue"
-import Hamburger from "../Hamburger/index.vue"
-import ThemeSwitch from "@/components/ThemeSwitch/index.vue"
-import Screenfull from "@/components/Screenfull/index.vue"
+import { computed, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAppStore } from '@/store/modules/app'
+import { useSettingsStore } from '@/store/modules/settings'
+import { useUserStore } from '@/store/modules/user'
+import { UserFilled } from '@element-plus/icons-vue'
+import BreadCrumb from '../BreadCrumb/index.vue'
+import Hamburger from '../Hamburger/index.vue'
+import ThemeSwitch from '@/components/ThemeSwitch/index.vue'
+import Screenfull from '@/components/Screenfull/index.vue'
 
 const router = useRouter()
 const appStore = useAppStore()
@@ -31,7 +31,7 @@ const state = reactive({
   },
   logout: () => {
     userStore.logout()
-    router.push("/login").catch((err) => {
+    router.push('/login').catch((err) => {
       console.warn(err)
     })
   }

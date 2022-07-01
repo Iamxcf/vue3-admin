@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { reactive, ref } from "vue"
-import { useRouter } from "vue-router"
-import { useUserStore } from "@/store/modules/user"
-import { User, Lock, Key } from "@element-plus/icons-vue"
-import ThemeSwitch from "@/components/ThemeSwitch/index.vue"
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useUserStore } from '@/store/modules/user'
+import { User, Lock, Key } from '@element-plus/icons-vue'
+import ThemeSwitch from '@/components/ThemeSwitch/index.vue'
 
 interface ILoginForm {
   /** admin 或 editor */
@@ -21,21 +21,21 @@ const state = reactive({
   /** 登录按钮 Loading */
   loading: false,
   /** 验证码图片 URL */
-  codeUrl: "",
+  codeUrl: '',
   /** 登录表单 */
   loginForm: {
-    username: "admin",
-    password: "12345678",
-    code: "abcd"
+    username: 'admin',
+    password: '12345678',
+    code: 'abcd'
   } as ILoginForm,
   /** 登录表单校验规则 */
   loginRules: {
-    username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+    username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
     password: [
-      { required: true, message: "请输入密码", trigger: "blur" },
-      { min: 8, max: 16, message: "长度在 8 到 16 个字符", trigger: "blur" }
+      { required: true, message: '请输入密码', trigger: 'blur' },
+      { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' }
     ],
-    code: [{ required: true, message: "请输入验证码", trigger: "blur" }]
+    code: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
   },
   /** 登录逻辑 */
   handleLogin: () => {
@@ -49,14 +49,14 @@ const state = reactive({
           })
           .then(() => {
             state.loading = false
-            router.push({ path: "/" }).catch((err) => {
+            router.push({ path: '/' }).catch((err) => {
               console.warn(err)
             })
           })
           .catch(() => {
             state.loading = false
             state.createCode()
-            state.loginForm.password = ""
+            state.loginForm.password = ''
           })
       } else {
         return false
@@ -66,7 +66,7 @@ const state = reactive({
   /** 创建验证码 */
   createCode: () => {
     // 先清空验证码的输入
-    state.loginForm.code = ""
+    state.loginForm.code = ''
     // 实际开发中，可替换成自己的地址，这里只是提供一个参考
     state.codeUrl = `/api/v1/login/code?${Math.random() * 1000}`
   }

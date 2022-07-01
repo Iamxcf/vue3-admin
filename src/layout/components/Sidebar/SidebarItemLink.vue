@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useRouter } from "vue-router"
-import { isExternal } from "@/utils/validate"
+import { useRouter } from 'vue-router'
+import { isExternal } from '@/utils/validate'
 
 const props = defineProps({
   to: {

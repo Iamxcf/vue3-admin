@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from "vue"
-import { Setting } from "@element-plus/icons-vue"
+import { ref } from 'vue'
+import { Setting } from '@element-plus/icons-vue'
 
 defineProps({
   buttonTop: {

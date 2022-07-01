@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { reactive, watch } from "vue"
-import { useSettingsStore } from "@/store/modules/settings"
+import { reactive, watch } from 'vue'
+import { useSettingsStore } from '@/store/modules/settings'
 
 const settingsStore = useSettingsStore()
 
@@ -16,7 +16,7 @@ watch(
   () => state.fixedHeader,
   (value) => {
     settingsStore.changeSetting({
-      key: "fixedHeader",
+      key: 'fixedHeader',
       value
     })
   }
@@ -25,7 +25,7 @@ watch(
   () => state.showTagsView,
   (value) => {
     settingsStore.changeSetting({
-      key: "showTagsView",
+      key: 'showTagsView',
       value
     })
   }
@@ -34,7 +34,7 @@ watch(
   () => state.showSidebarLogo,
   (value) => {
     settingsStore.changeSetting({
-      key: "showSidebarLogo",
+      key: 'showSidebarLogo',
       value
     })
   }
@@ -43,7 +43,7 @@ watch(
   () => state.showThemeSwitch,
   (value) => {
     settingsStore.changeSetting({
-      key: "showThemeSwitch",
+      key: 'showThemeSwitch',
       value
     })
   }
@@ -52,7 +52,7 @@ watch(
   () => state.showScreenfull,
   (value) => {
     settingsStore.changeSetting({
-      key: "showScreenfull",
+      key: 'showScreenfull',
       value
     })
   }

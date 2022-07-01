@@ -1,133 +1,133 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
-const Layout = () => import("@/layout/index.vue")
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+const Layout = () => import('@/layout/index.vue')
 
 /** 常驻路由 */
 export const constantRoutes: Array<RouteRecordRaw> = [
   {
-    path: "/redirect",
+    path: '/redirect',
     component: Layout,
     meta: {
       hidden: true
     },
     children: [
       {
-        path: "/redirect/:path(.*)",
-        component: () => import("@/views/redirect/index.vue")
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index.vue')
       }
     ]
   },
   {
-    path: "/login",
-    component: () => import("@/views/login/index.vue"),
+    path: '/login',
+    component: () => import('@/views/login/index.vue'),
     meta: {
       hidden: true
     }
   },
   {
-    path: "/",
+    path: '/',
     component: Layout,
-    redirect: "/dashboard",
+    redirect: '/dashboard',
     children: [
       {
-        path: "dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
-        name: "Dashboard",
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index.vue'),
+        name: 'Dashboard',
         meta: {
-          title: "首页",
-          icon: "dashboard",
+          title: '首页',
+          icon: 'dashboard',
           affix: true
         }
       }
     ]
   },
   {
-    path: "/unocss",
+    path: '/unocss',
     component: Layout,
-    redirect: "/unocss/index",
+    redirect: '/unocss/index',
     children: [
       {
-        path: "index",
-        component: () => import("@/views/unocss/index.vue"),
-        name: "Unocss",
+        path: 'index',
+        component: () => import('@/views/unocss/index.vue'),
+        name: 'Unocss',
         meta: {
-          title: "unocss",
-          icon: "unocss"
+          title: 'unocss',
+          icon: 'unocss'
         }
       }
     ]
   },
   {
-    path: "/link",
+    path: '/link',
     component: Layout,
     children: [
       {
-        path: "https://juejin.cn/post/7089377403717287972",
+        path: 'https://juejin.cn/post/7089377403717287972',
         component: () => {},
-        name: "Link",
+        name: 'Link',
         meta: {
-          title: "外链",
-          icon: "link"
+          title: '外链',
+          icon: 'link'
         }
       }
     ]
   },
   {
-    path: "/menu",
+    path: '/menu',
     component: Layout,
-    redirect: "/menu/menu1",
-    name: "Menu",
+    redirect: '/menu/menu1',
+    name: 'Menu',
     meta: {
-      title: "多级菜单",
-      icon: "menu"
+      title: '多级菜单',
+      icon: 'menu'
     },
     children: [
       {
-        path: "menu1",
-        component: () => import("@/views/menu/menu1/index.vue"),
-        redirect: "/menu/menu1/menu1-1",
-        name: "Menu1",
-        meta: { title: "menu1" },
+        path: 'menu1',
+        component: () => import('@/views/menu/menu1/index.vue'),
+        redirect: '/menu/menu1/menu1-1',
+        name: 'Menu1',
+        meta: { title: 'menu1' },
         children: [
           {
-            path: "menu1-1",
-            component: () => import("@/views/menu/menu1/menu1-1/index.vue"),
-            name: "Menu1-1",
-            meta: { title: "menu1-1" }
+            path: 'menu1-1',
+            component: () => import('@/views/menu/menu1/menu1-1/index.vue'),
+            name: 'Menu1-1',
+            meta: { title: 'menu1-1' }
           },
           {
-            path: "menu1-2",
-            component: () => import("@/views/menu/menu1/menu1-2/index.vue"),
-            redirect: "/menu/menu1/menu1-2/menu1-2-1",
-            name: "Menu1-2",
-            meta: { title: "menu1-2" },
+            path: 'menu1-2',
+            component: () => import('@/views/menu/menu1/menu1-2/index.vue'),
+            redirect: '/menu/menu1/menu1-2/menu1-2-1',
+            name: 'Menu1-2',
+            meta: { title: 'menu1-2' },
             children: [
               {
-                path: "menu1-2-1",
-                component: () => import("@/views/menu/menu1/menu1-2/menu1-2-1/index.vue"),
-                name: "Menu1-2-1",
-                meta: { title: "menu1-2-1" }
+                path: 'menu1-2-1',
+                component: () => import('@/views/menu/menu1/menu1-2/menu1-2-1/index.vue'),
+                name: 'Menu1-2-1',
+                meta: { title: 'menu1-2-1' }
               },
               {
-                path: "menu1-2-2",
-                component: () => import("@/views/menu/menu1/menu1-2/menu1-2-2/index.vue"),
-                name: "Menu1-2-2",
-                meta: { title: "menu1-2-2" }
+                path: 'menu1-2-2',
+                component: () => import('@/views/menu/menu1/menu1-2/menu1-2-2/index.vue'),
+                name: 'Menu1-2-2',
+                meta: { title: 'menu1-2-2' }
               }
             ]
           },
           {
-            path: "menu1-3",
-            component: () => import("@/views/menu/menu1/menu1-3/index.vue"),
-            name: "Menu1-3",
-            meta: { title: "menu1-3" }
+            path: 'menu1-3',
+            component: () => import('@/views/menu/menu1/menu1-3/index.vue'),
+            name: 'Menu1-3',
+            meta: { title: 'menu1-3' }
           }
         ]
       },
       {
-        path: "menu2",
-        component: () => import("@/views/menu/menu2/index.vue"),
-        name: "Menu2",
-        meta: { title: "menu2" }
+        path: 'menu2',
+        component: () => import('@/views/menu/menu2/index.vue'),
+        name: 'Menu2',
+        meta: { title: 'menu2' }
       }
     ]
   }
@@ -140,61 +140,61 @@ export const constantRoutes: Array<RouteRecordRaw> = [
  */
 export const asyncRoutes: Array<RouteRecordRaw> = [
   {
-    path: "/permission",
+    path: '/permission',
     component: Layout,
-    redirect: "/permission/page",
-    name: "Permission",
+    redirect: '/permission/page',
+    name: 'Permission',
     meta: {
-      title: "权限管理",
-      icon: "lock",
-      roles: ["admin", "editor"], // 可以在根路由中设置角色
+      title: '权限管理',
+      icon: 'lock',
+      roles: ['admin', 'editor'], // 可以在根路由中设置角色
       alwaysShow: true // 将始终显示根菜单
     },
     children: [
       {
-        path: "page",
-        component: () => import("@/views/permission/page.vue"),
-        name: "PagePermission",
+        path: 'page',
+        component: () => import('@/views/permission/page.vue'),
+        name: 'PagePermission',
         meta: {
-          title: "页面权限",
-          roles: ["admin"] // 或者在子导航中设置角色
+          title: '页面权限',
+          roles: ['admin'] // 或者在子导航中设置角色
         }
       },
       {
-        path: "directive",
-        component: () => import("@/views/permission/directive.vue"),
-        name: "DirectivePermission",
+        path: 'directive',
+        component: () => import('@/views/permission/directive.vue'),
+        name: 'DirectivePermission',
         meta: {
-          title: "指令权限" // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
+          title: '指令权限' // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
         }
       }
     ]
   },
   {
-    path: "/:pathMatch(.*)*", // 必须将 'ErrorPage' 路由放在最后, Must put the 'ErrorPage' route at the end
+    path: '/:pathMatch(.*)*', // 必须将 'ErrorPage' 路由放在最后, Must put the 'ErrorPage' route at the end
     component: Layout,
-    redirect: "/404",
-    name: "ErrorPage",
+    redirect: '/404',
+    name: 'ErrorPage',
     meta: {
-      title: "错误页面",
-      icon: "404",
+      title: '错误页面',
+      icon: '404',
       hidden: true
     },
     children: [
       {
-        path: "401",
-        component: () => import("@/views/error-page/401.vue"),
-        name: "401",
+        path: '401',
+        component: () => import('@/views/error-page/401.vue'),
+        name: '401',
         meta: {
-          title: "401"
+          title: '401'
         }
       },
       {
-        path: "404",
-        component: () => import("@/views/error-page/404.vue"),
-        name: "404",
+        path: '404',
+        component: () => import('@/views/error-page/404.vue'),
+        name: '404',
         meta: {
-          title: "404"
+          title: '404'
         }
       }
     ]
